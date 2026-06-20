@@ -1,25 +1,27 @@
-/* CSS by Christina Carrasquilla, iteration by */
+/* CSS by Christina Carrasquilla, iteration by Yarrow Watts */
 
 /* ===== Color Palette ===== 
 
-    backgound: #0f172a;
+    background: #0f172a;
     nav-footer: #020617;
     card: #1e293b;
     text-main: #e2e8f0;
     text-muted: #94a3b8;
     accent: #38bdf8;
-}
+
 */
 
-/* ===== GLOBAL (Base) Styles ===== */
+/* ===== GLOBAL / MOBILE-FIRST STYLES ===== */
+
 body {
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
     background-color: #0f172a;
     color: #e2e8f0;
-    min-width:500px;
-    display:grid;
-    grid-template-columns:1fr;
+
+    /* Mobile-first: single-column layout */
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 header {
@@ -53,11 +55,12 @@ nav a {
     padding: 0.5rem;
     display: block;
     border-left: 4px solid #38bdf8;
-    margin: .25rem;
+    margin: 0.25rem;
 }
 
 nav a:hover {
     background-color: #334155;
+    color:#e2e8f0
 }
 
 main {
@@ -65,34 +68,37 @@ main {
 }
 
 img {
-    width:100%;
+    width: 100%;
+    height: auto;
 }
 
-#screenings, #workshops, #collaborations {
+#screenings,
+#workshops,
+#collaborations {
     background-color: #1e293b;
     padding: 1rem;
-    padding: 1rem;
     border-left: 4px solid #38bdf8;
+    margin-bottom: 1rem;
 }
 
 aside {
     background-color: #38bdf8;
     color: #1e293b;
     padding: 1rem;
-    padding: 1rem;
 }
 
 a {
-    display:block;
-    background-color:#020617;
-    color:#e2e8f0;
-    padding:1rem 2rem;
-    text-decoration:none;
-    text-align:center;
+    display: block;
+    background-color: #020617;
+    color: #e2e8f0;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-align: center;
 }
+
 a:hover {
-    color:#020617;
-    background-color:#e2e8f0;
+    color: #020617;
+    background-color: #e2e8f0;
 }
 
 footer {
@@ -101,6 +107,55 @@ footer {
     padding: 1rem;
     margin-top: 1rem;
 }
+
+
+/* ===== Media Query (Medium) ===== */
+/* Screen size: at least 800px */
+
+@media screen and (min-width: 800px) {
+
+    /* Changes body layout from one column to two columns */
+    body {
+        grid-template-columns: 1fr 300px;
+    }
+
+    /* Header, nav, and footer span across both columns */
+    header,
+    nav,
+    footer {
+        grid-column: 1 / -1;
+    }
+
+    /* Nav displays horizontally on larger screens */
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav li {
+        flex: 1;
+    }
+
+    nav a {
+        border-left: none;
+        margin: 0;
+    }
+
+    /* Card row changes from stacked to side-by-side */
+    .card-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    /* Sections inside card-row each take about one-third of the row */
+    .card-row section {
+        width: 30%;
+    }
+}
+
+
 
 /* ===== Media Query (Medium) ===== */
 /* write a media query for a screen with at least 800px */
