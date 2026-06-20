@@ -13,5 +13,5 @@ The website uses semantic HTML, images with descriptive alt text, and mobile-fir
 - Collaborations
 
 ## Published Website
-[View the published site here](PASTE-YOUR-PUBLISHED-WEBSITE-URL-HERE)
+[View the published site here](https://yarrowwatts.github.io/5-Build/)
 
